@@ -1,11 +1,11 @@
 enum RelationshipType {
-  PADRE = 'Padre',
-  MADRE = 'Madre',
-  ABUELO = 'Abuelo',
-  ABUELA = 'Abuela',
-  TIO = 'Tío',
-  TIA = 'Tía',
-  OTRO_FAMILIAR = 'OTRO FAMILIAR',
+  FATHER = 'Padre',
+  MOTHER = 'Madre',
+  GRANDFATHER = 'Abuelo',
+  GRANDMOTHER = 'Abuela',
+  UNCLE = 'Tío',
+  AUNT = 'Tía',
+  ANOTHER_FAMILY = 'OTRO FAMILIAR',
   TUTOR = 'Tutor',
 }
 
