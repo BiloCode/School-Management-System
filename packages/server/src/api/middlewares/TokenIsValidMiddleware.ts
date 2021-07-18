@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 
 import TokenIsCaduced from '@services/TokenIsCaduced';
 import TokenFormatIsValid from '@services/TokenFormatIsValid';
+import GetInformationToken from '@services/GetInformationToken';
 
 const TokenIsValidMiddleware = (
   req: Request,
@@ -14,19 +15,22 @@ const TokenIsValidMiddleware = (
     return;
   }
 
-  const token = new TokenFormatIsValid().getToken(authorization as string);
-  if (!token) {
-    res.status(404).json({ message: 'Invalid Token Format' });
-    return;
-  }
+  // const token = new TokenFormatIsValid().getToken(authorization as string);
+  // if (!token) {
+  //   res.status(404).json({ message: 'Invalid Token Format' });
+  //   return;
+  // }
 
-  const token_is_caduced = new TokenIsCaduced().isCaduced(token);
-  if (token_is_caduced) {
-    res.status(404).json({ message: 'Token caduced' });
-    return;
-  }
+  // const token_is_caduced = new TokenIsCaduced().isCaduced(token);
+  // if (token_is_caduced) {
+  //   res.status(404).json({ message: 'Token caduced' });
+  //   return;
+  // }
 
-  next();
+  const tokenInformation = new GetInformationToken().getInformation(authorization);
+
+
+  next(tokenInformation);
 };
 
 export default TokenIsValidMiddleware;
