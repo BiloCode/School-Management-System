@@ -7,6 +7,8 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
+import { firestore } from 'firebase-admin';
+
 import { Student } from './Student';
 import { FirebaseFileType, IHomework } from '@system/types';
 
@@ -16,6 +18,7 @@ export class Homework implements IHomework {
   id: string;
 
   @ManyToOne(() => Student, (user) => user.homeworks)
+  @JoinColumn()
   student: Student;
 
   @Column({ type: 'varchar' })
@@ -28,5 +31,5 @@ export class Homework implements IHomework {
   file: FirebaseFileType[];
 
   @CreateDateColumn()
-  createdAt: string;
+  createdAt: firestore.Timestamp;
 }
