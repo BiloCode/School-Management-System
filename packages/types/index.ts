@@ -8,6 +8,7 @@ import PublicationType from './src/PublicationType';
 import RelationshipType from './src/RelationshipType';
 import SchoolGradeType from './src/SchoolGradeType';
 import UserType from './src/UserType';
+import PublicationsFormated from './src/PublicationsFormated';
 
 export {
   DateRangeType,
@@ -20,6 +21,7 @@ export {
   RelationshipType,
   SchoolGradeType,
   UserType,
+  PublicationsFormated,
 };
 
 //MYSQL TYPES

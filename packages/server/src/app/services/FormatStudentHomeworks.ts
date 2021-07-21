@@ -1,12 +1,43 @@
-import Publications from '@models/firebase/Publications';
-import { Homework } from '@models/mysql/Homework';
+import { PublicationsFormated } from '@system/types';
+import {
+  FormatStudentHomeworksPayload,
+  IFormatStudentHomeworks,
+} from '@interfaces/IFormatStudentHomeworks';
 
-type FormatStudentHomeworks = {
-  homeworks: Homework[];
-  publications: Publications[];
-};
+export default class FormatStudentHomeworks implements IFormatStudentHomeworks {
+  formatData(data: FormatStudentHomeworksPayload) {
+    let newPublicationFormat: PublicationsFormated[] = [];
 
-export const FormatStudentHomeworks = (data: FormatStudentHomeworks) => {
-  console.log(data.homeworks);
-  console.log(data.publications);
-};
+    data.publications.map((vPublication, iPublication) => {
+      let newPublication = vPublication as PublicationsFormated;
+
+      data.homeworks?.map((vHome, iHome) => {
+        if (vPublication.id === vHome.publicationId) {
+          newPublication.homework = vHome;
+        }
+      });
+
+      newPublicationFormat.push(newPublication);
+    });
+    console.log(newPublicationFormat);
+    return newPublicationFormat;
+  }
+}
+
+/* export const FormatStudentHomeworks = (data: FormatStudentHomeworks) => {
+  let newPublicationFormat: PublicationsFormated[] = [];
+
+  data.publications.map((vPublication, iPublication) => {
+    let newPublication = vPublication as PublicationsFormated;
+
+    data.homeworks?.map((vHome, iHome) => {
+      if (vPublication.id === vHome.publicationId) {
+        newPublication.homework = vHome;
+      }
+    });
+
+    newPublicationFormat.push(newPublication);
+  });
+  console.log(newPublicationFormat);
+  return newPublicationFormat;
+}; */

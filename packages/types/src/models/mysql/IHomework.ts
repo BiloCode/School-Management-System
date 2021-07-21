@@ -4,6 +4,7 @@ import FirebaseFileType from '../../FirebaseFileType';
 
 interface IHomework {
   id: string;
+  /* studentId: string; */
   student: IStudent;
   publicationId: string;
   comment: string;

@@ -1,5 +1,5 @@
 import { IHomework } from '../../../../types';
 
-export interface IGetHomeworksByUserId {
+export interface IGetAllStudenClassroom {
   getData(userId: string): Promise<IHomework[] | null>;
 }
