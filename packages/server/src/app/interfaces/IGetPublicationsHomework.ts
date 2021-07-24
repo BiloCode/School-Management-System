@@ -7,6 +7,6 @@ export type FormatStudentHomeworksPayload = {
   publications: Publications[];
 };
 
-export interface IFormatStudentHomeworks {
-  formatData(data: FormatStudentHomeworksPayload): PublicationsFormated[];
+export interface IGetPublicationsHomework {
+  getData(userId: string): Promise<PublicationsFormated[]>;
 }

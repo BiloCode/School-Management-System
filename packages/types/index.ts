@@ -25,7 +25,7 @@ export {
 };
 
 //MYSQL TYPES
-import IClassroomStudentPerYear from './src/models/mysql/IClassroomStudentPerYear';
+import IClassroomStudent from './src/models/mysql/IClassroomStudent';
 import IStudentTutors from './src/models/mysql/IStudentTutors';
 import IDirector from './src/models/mysql/IDirector';
 import IHomework from './src/models/mysql/IHomework';
@@ -35,7 +35,7 @@ import ITutor from './src/models/mysql/ITutor';
 import IUser from './src/models/mysql/IUser';
 
 export {
-  IClassroomStudentPerYear,
+  IClassroomStudent,
   IDirector,
   IHomework,
   IStudent,

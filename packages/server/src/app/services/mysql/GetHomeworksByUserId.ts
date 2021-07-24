@@ -1,5 +1,5 @@
 import { IGetHomeworksByUserId } from '@interfaces/IGetHomeworksByUserId';
-import { ClassroomStudentPerYear } from '@models/mysql/ClassroomStudentPerYear';
+import { ClassroomStudent } from '@models/mysql/ClassroomStudent';
 import { Homework } from '@models/mysql/Homework';
 import { Student } from '@models/mysql/Student';
 import { User } from '@models/mysql/User';
@@ -22,7 +22,7 @@ export default class GetHomeworksByUserIdService
       .getMany(); */
 
     const response = await createQueryBuilder(Homework, 'h')
-      .innerJoin(ClassroomStudentPerYear, 'c', 'c.studentId = h.studentId')
+      .innerJoin(ClassroomStudent, 'c', 'c.studentId = h.studentId')
       .innerJoinAndMapMany('h.student', Student, 's', 's.id = c.studentId')
       .innerJoin(User, 'u', 'u.id = s.userId')
       .where(`u.id = '${userId}'`)

@@ -1,13 +1,9 @@
-import PublicationsHomeworkFormated from '@controllers/Publications/GetPublicationsHomeworkFormated';
+import GetPublicationsHomeworkFormated from '@controllers/Publications/GetPublicationsHomeworkFormated';
 import { AdapterController } from '@utils/AdapterController';
 import { Router } from 'express';
 
 const app = Router();
 
-app.get(
-  '/',
-
-  AdapterController(PublicationsHomeworkFormated)
-);
+app.get('/', AdapterController(GetPublicationsHomeworkFormated));
 
 export default app;

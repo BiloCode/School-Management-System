@@ -1,5 +1,5 @@
 import { IGetPublicationsByClassroomId } from '@interfaces/IGetPublicationsByClassroomId';
-import Publications from '@models/firebase/Publications';
+import { Publications } from '@models/firebase/Publications';
 import { getRepository } from 'fireorm';
 
 export default class GetPublicationsByClassroomIdService

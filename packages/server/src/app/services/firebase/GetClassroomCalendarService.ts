@@ -2,7 +2,7 @@ import {
   IGetClassroomCalendar,
   IGetClassroomPayload,
 } from '@interfaces/IGetClassroomCalendar';
-import ClassroomCalendar from '@models/firebase/ClassroomCalendar';
+import { ClassroomCalendar } from '@models/firebase/ClassroomCalendar';
 import { getRepository } from 'fireorm';
 
 export default class GetClassroomCalendarService
