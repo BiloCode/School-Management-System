@@ -10,7 +10,7 @@ export default class GetClassroomCalendarService
 {
   async getClassroomCalendar(classroom: IGetClassroomPayload) {
     const classroomCalendarRepository = getRepository(ClassroomCalendar);
-    const response = await classroomCalendarRepository.findOne();
+    const response = await classroomCalendarRepository.findById(classroom.id!);
     return response;
   }
 }
