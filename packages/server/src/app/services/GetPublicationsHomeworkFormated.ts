@@ -1,6 +1,3 @@
-import { PublicationsFormated } from '@system/types';
-import GetAllClassroomStudent from './mysql/GetAllClassroomStudent';
-import GetPublicationsByClassroomIdService from './firebase/GetPublicationsByClassroomIdService';
 import { IGetPublicationsHomework } from '@interfaces/IGetPublicationsHomework';
 import { IGetAllClassroomStudent } from '@interfaces/IGetAllClassroomStudent';
 import { IGetPublicationsByClassroomId } from '@interfaces/IGetPublicationsByClassroomId';

@@ -4,7 +4,6 @@ import FormatStudentHomeworks from '@services/FormatStudentHomeworks';
 import GetPublicationsHomework from '@services/GetPublicationsHomeworkFormated';
 import GetAllClassroomStudent from '@services/mysql/GetAllClassroomStudent';
 import { Request, Response } from 'express';
-import PublicationsFormated from '../../../../../types/src/PublicationsFormated';
 
 export default class GetPublicationsHomeworkFormated implements Controller {
   async start(request: Request, response: Response) {
@@ -17,7 +16,9 @@ export default class GetPublicationsHomeworkFormated implements Controller {
         new FormatStudentHomeworks()
       );
 
-      const publicationsFormated = await getPublicationsHomework.getData('2');
+      const publicationsFormated = await getPublicationsHomework.getData(
+        userId
+      );
 
       return response.status(200).json(publicationsFormated);
     } catch {
