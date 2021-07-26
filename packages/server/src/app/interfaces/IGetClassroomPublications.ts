@@ -1,5 +1,5 @@
 import { IPublications } from '../../../../types';
 
-export interface IGetPublicationsByClassroomId {
+export interface IGetClassroomPublications {
   getData(clasroomId: string): Promise<IPublications[]>;
 }

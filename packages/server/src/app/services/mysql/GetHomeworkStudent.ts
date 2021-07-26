@@ -1,10 +1,10 @@
-import { IGetAllClassroomStudent } from '@interfaces/IGetAllClassroomStudent';
+import { IGetHomeworkStudent } from '@interfaces/IGetHomeworkStudent';
 import { ClassroomStudent } from '@models/mysql/ClassroomStudent';
 import { Homework } from '@models/mysql/Homework';
 import { Student } from '@models/mysql/Student';
 import { createQueryBuilder } from 'typeorm';
 
-export default class GetAllClassroomStudent implements IGetAllClassroomStudent {
+export default class GetHomeworkStudent implements IGetHomeworkStudent {
   async getData(userId: string) {
     const response = await createQueryBuilder()
       .select('h')

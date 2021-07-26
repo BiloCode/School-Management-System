@@ -1,6 +1,6 @@
 import { Homework } from '@models/mysql/Homework';
 
-export interface IGetAllClassroomStudent {
+export interface IGetHomeworkStudent {
   getData(userId: string): Promise<{
     classroomId: string;
     homework: Homework[];

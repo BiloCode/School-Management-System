@@ -30,66 +30,13 @@ describe('Validando el endpoint', () => {
       });
   });
 
-  test('Sending an undefined', (done) => {
-    request(app)
-      .get('/publicationStudent')
-      .send({ userId: undefined })
-      .expect('Content-Type', /application\/json/)
-      .expect(200)
-      .end((err, res) => {
-        if (err) {
-          return done(err);
-        }
-
-        expect(res.body.length).toBe(0);
-        return done();
-      });
-  });
-
-  test('Sending an null', (done) => {
-    request(app)
+  test('Sending an incorret userId', async () => {
+    const response = await request(app)
       .get('/publicationStudent')
       .send({ userId: null })
-      .expect('Content-Type', /application\/json/)
-      .expect(200)
-      .end((err, res) => {
-        if (err) {
-          return done(err);
-        }
+      .set('Accept', 'application/json')
+      .expect(200);
 
-        expect(res.body.length).toBe(0);
-        return done();
-      });
-  });
-
-  test('No results', (done) => {
-    request(app)
-      .get('/publicationStudent')
-      .send({ userId: '0' })
-      .expect('Content-Type', /application\/json/)
-      .expect(200)
-      .end((err, res) => {
-        if (err) {
-          return done(err);
-        }
-
-        expect(res.body.length).toBe(0);
-        return done();
-      });
-  });
-
-  test('No sending data', (done) => {
-    request(app)
-      .get('/publicationStudent')
-      .expect('Content-Type', /application\/json/)
-      .expect(200)
-      .end((err, res) => {
-        if (err) {
-          return done(err);
-        }
-
-        expect(res.body.length).toBe(0);
-        return done();
-      });
+    expect(response.body.message).not.toBeUndefined();
   });
 });

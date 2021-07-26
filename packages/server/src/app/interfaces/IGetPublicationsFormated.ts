@@ -7,6 +7,6 @@ export type FormatStudentHomeworksPayload = {
   publications: Publications[];
 };
 
-export interface IGetPublicationsHomework {
-  getData(userId: string): Promise<PublicationsFormated[]>;
+export interface IGetPublicationsFormated {
+  getData(userId: string): Promise<PublicationsFormated[] | null>;
 }
