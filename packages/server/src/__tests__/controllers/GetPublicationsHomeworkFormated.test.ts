@@ -1,8 +1,8 @@
-import { server } from '../../server';
 import express from 'express';
 import request from 'supertest';
 import mysqlInitialize from '@config/mysql';
 import firebaseInitialize from '@config/firebase';
+import { server } from '../../server';
 
 const app = express();
 

@@ -6,9 +6,9 @@ import TokenFormatIsValid from '@services/TokenFormatIsValid';
 export const TokenIsValidMiddleware = (
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
-  const authorization = req.headers.authorization;
+  const { authorization } = req.headers;
   if (!authorization) {
     res.status(404).json({ message: 'Token undefined' });
     return;

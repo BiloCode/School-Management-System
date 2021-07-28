@@ -1,8 +1,10 @@
 import { Router } from 'express';
-import TokenIsValidMiddleware from '@middlewares/TokenIsValidMiddleware';
+import { AuthenticationUserMiddleware } from '@middlewares/AuthenticationMiddleware';
 
 const app = Router();
 
-app.get('/', TokenIsValidMiddleware, () => console.log('Here goes the controller'));
+app.post('/student', AuthenticationUserMiddleware, () => console.log('Student'));
+app.post('/teacher', AuthenticationUserMiddleware, () => console.log('Student'));
+app.post('/director', AuthenticationUserMiddleware, () => console.log('Student'));
 
 export default app;
