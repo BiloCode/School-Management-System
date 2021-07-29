@@ -1,10 +1,22 @@
 import { getRepository } from 'typeorm';
-import { User } from '@models/mysql/User';
 import { Student } from '@models/mysql/Student';
-import { IGetStudent } from '@interfaces/IGetUsers';
+import { IGetUser } from '@interfaces/IGetUsers';
 
-export class GetStudent implements IGetStudent {
+export class GetStudent implements IGetUser {
   async getData(userId) {
-    return null;
+    try {
+      const studentRepository = getRepository(Student);
+      const studentData = await studentRepository.findOne({
+        where: {
+          user: userId,
+        },
+        relations: ['user'],
+      });
+      if (typeof studentData !== 'undefined') return studentData as Student;
+      return null;
+    } catch (error) {
+      console.log(error);
+      return null;
+    }
   }
 }

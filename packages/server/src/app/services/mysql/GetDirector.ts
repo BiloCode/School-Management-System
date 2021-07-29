@@ -1,28 +1,23 @@
 import { getRepository } from 'typeorm';
 import { Director } from '@models/mysql/Director';
-import { IGetDirector } from '@interfaces/IGetUsers';
-import { on } from 'events';
+import { IGetUser } from '@interfaces/IGetUsers';
 
-export class GetDirector implements IGetDirector {
+export class GetDirector implements IGetUser {
   async getData(userId) {
     try {
       const directorRepository = getRepository(Director);
-      const directorReceived = await directorRepository.findOne({
+      const directorData = await directorRepository.findOne({
         where: {
-          id: userId,
+          user: userId,
         },
-        join: {
-          alias: 'director',
-          leftJoinAndSelect: {
-            user: 'director.user',
+        relations: ['user'],
 
-          },
-
-        },
       });
-      if (typeof directorReceived !== 'undefined') return directorReceived as Director;
+
+      if (typeof directorData !== 'undefined') return directorData as Director;
       return null;
     } catch (error) {
+      console.log(error);
       return null;
     }
   }

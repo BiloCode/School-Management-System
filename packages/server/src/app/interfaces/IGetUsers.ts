@@ -2,14 +2,8 @@ import { Director } from '@models/mysql/Director';
 import { Teacher } from '@models/mysql/Teacher';
 import { Student } from '@models/mysql/Student';
 
-export interface IGetDirector {
-    getData(userId:string):Promise<Director|null>;
-}
+type userType = Director | Teacher | Student;
 
-export interface IGetTeacher {
-    getData(userId:string):Promise<Teacher|null>;
-}
-
-export interface IGetStudent {
-    getData(userId:string):Promise<Student|null>;
+export interface IGetUser {
+    getData(userId:string):Promise<userType|null>;
 }
