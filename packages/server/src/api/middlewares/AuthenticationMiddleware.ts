@@ -9,8 +9,9 @@ export const AuthenticationUserMiddleware = async (
   next:NextFunction,
 ) => {
   const {
-    dni, password, userType, userId,
+    dni, password, userType,
   } = req.body;
+  const { userId } = req.query;
 
   if (userId) {
     req.body.userId = userId;

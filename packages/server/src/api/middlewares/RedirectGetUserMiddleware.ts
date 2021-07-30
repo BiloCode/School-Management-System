@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { urlBase } from '@config/urlBase';
 
 export const RedirectGetUserController = (
   req:Request,
@@ -10,7 +11,8 @@ export const RedirectGetUserController = (
     return;
   }
   // Quitar estas lineas en caso de ser innecesarias
-  req.body.userId = userId;
+  // req.body.userId = userId;
   // -----------------------------------------------
-  res.redirect(`/auth/${userType}`);
+  const route = `${urlBase}/auth/${userType}?userId=${userId}`;
+  res.redirect(route);
 };
