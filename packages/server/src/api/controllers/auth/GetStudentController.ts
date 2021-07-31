@@ -5,14 +5,15 @@ import { GetStudent } from '@services/mysql/GetStudent';
 export class GetStudentController implements Controller {
   async start(req:Request, res:Response) {
     try {
-      const { userId } = req.body;
-      const studentData = await new GetStudent().getData(userId);
-      if (!studentData) {
+      const { userId, tokenGenerated } = req.body;
+      const userData = await new GetStudent().getData(userId);
+      if (!userData) {
         res.status(404).json({ message: 'Usuario no encontrado' });
         return;
       }
       res.status(200).json({
-        studentData,
+        userData,
+        tokenGenerated,
       });
     } catch (error) {
       console.log(error);
