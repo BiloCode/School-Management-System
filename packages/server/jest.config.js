@@ -3,8 +3,8 @@ module.exports = {
   preset: 'ts-jest',
   clearMocks: true,
   testEnvironment: 'node',
-  setTimeout: 30000,
-  testTimeout: 30000,
+  setTimeout: 50000,
+  testTimeout: 60000,
   setupFilesAfterEnv: ["./src/setupTest.ts"],
   testRegex: ["(/__tests__/.*|(\\.|/)(test|spec))\\.(js?|ts?)"],
   moduleNameMapper: {

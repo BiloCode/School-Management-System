@@ -11,13 +11,6 @@ export const AuthenticationUserMiddleware = async (
   const {
     dni, password, userType,
   } = req.body;
-  const { userId } = req.query;
-
-  if (userId) {
-    req.body.userId = userId;
-    next();
-    return;
-  }
 
   const userIdResponse = await new AuthenticationUser(new ComparePasswordWithBcrypt())
     .authentication(dni as string, password as string);
@@ -33,6 +26,7 @@ export const AuthenticationUserMiddleware = async (
   }
   req.body.tokenGenerated = tokenGenerated;
   req.body.userId = userIdResponse;
+  req.body.userType = userType;
   next();
 };
 

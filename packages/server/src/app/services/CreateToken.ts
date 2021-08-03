@@ -7,7 +7,7 @@ class CreateToken {
     try {
       const formatData = { userId, userType };
       const tokenGenerated = jwt.sign(formatData, TOKEN_KEY, { expiresIn: '15d' });
-      const tokenFormat = `bearer ${tokenGenerated}`;
+      const tokenFormat = `Bearer ${tokenGenerated}`;
       return tokenFormat;
     } catch (error) {
       return null;
