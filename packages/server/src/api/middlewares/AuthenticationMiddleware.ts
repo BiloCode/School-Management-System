@@ -2,31 +2,36 @@ import { NextFunction, Request, Response } from 'express';
 import AuthenticationUser from '@services/mysql/AuthenticationUser';
 import ComparePasswordWithBcrypt from '@services/ComparePassword';
 import CreateToken from '@services/CreateToken';
+import { UserType } from '@system/types';
+
+type RequestControllerType = {
+  DNI : string,
+  PASSWORD : string,
+  USER_TYPE : UserType,
+}
 
 export const AuthenticationUserMiddleware = async (
   req: Request,
   res: Response,
   next:NextFunction,
 ) => {
-  const {
-    dni, password, userType,
-  } = req.body;
+  const { DNI, PASSWORD, USER_TYPE } = req.body as RequestControllerType;
 
-  const userIdResponse = await new AuthenticationUser(new ComparePasswordWithBcrypt())
-    .authentication(dni as string, password as string);
-  if (!userIdResponse) {
-    res.status(404).json({ message: 'Usuario no encontrado' });
+  const USER_ID_RESPONSE = await new AuthenticationUser(new ComparePasswordWithBcrypt())
+    .authentication(DNI, PASSWORD);
+  if (!USER_ID_RESPONSE) {
+    res.status(404).json({ MESSAGE: 'Credenciales Incorrectas' });
     return;
   }
 
-  const tokenGenerated = new CreateToken().create(userIdResponse as string, userType);
-  if (!tokenGenerated) {
+  const TOKEN_GENERATED = new CreateToken().create(USER_ID_RESPONSE as string, USER_TYPE);
+  if (!TOKEN_GENERATED) {
     res.status(500).json({ message: 'No se pudo crear el token' });
     return;
   }
-  req.body.tokenGenerated = tokenGenerated;
-  req.body.userId = userIdResponse;
-  req.body.userType = userType;
+  req.body.TOKEN_GENERATED = TOKEN_GENERATED;
+  req.body.USER_ID = USER_ID_RESPONSE;
+  req.body.USER_TYPE = USER_TYPE;
   next();
 };
 

@@ -26,6 +26,6 @@ To use firebase you need to create a **firestore_secret_key.json** file
 
 ### Code Rules
 
-- Camel Case -> Class , Types , Interfaces
-- Lower Case -> Functions
-- Snake Case -> Variables , objetos
+- Pascal Case -> Class , Types , Interfaces
+- Camel Case -> Functions
+- Snake Case -> Variables , objetos , object properties
