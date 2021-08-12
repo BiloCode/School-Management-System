@@ -1,10 +1,23 @@
 import * as React from 'react';
-import { Text, View } from 'react-native';
-import Colors from '../../config/colors';
+import { View } from 'react-native';
+
+//
+import { ButtonComponent } from '../../components/atoms/Button';
+// import { Paragraph } from '../../components/atoms/Paragraph/style';
+
+const handleButton = () => console.log('Pressed me.');
 
 const ScreenTest = () => (
-  <View>
-    <Text>{Colors.BLACK}</Text>
+  <View style={{ justifyContent: 'space-around', alignContent: 'space-around', flex: 3 }}>
+    <ButtonComponent color="RED" size="normal" text="REALIZAR ENTREGA" onPress={handleButton} />
+    <ButtonComponent color="RED" size="normal" text="REALIZAR ENTREGA" onPress={handleButton} ghost />
+    <ButtonComponent color="RED" size="normal" text="REALIZAR ENTREGA" onPress={handleButton} opacity />
+    <ButtonComponent color="RED" size="normal" text="REALIZAR ENTREGA" onPress={handleButton} ghost opacity />
+
+    <ButtonComponent color="BLUE" size="small" text="REALIZAR ENTREGA" onPress={handleButton} />
+    <ButtonComponent color="BLUE" size="small" text="REALIZAR ENTREGA" onPress={handleButton} ghost />
+    <ButtonComponent color="BLUE" size="small" text="REALIZAR ENTREGA" onPress={handleButton} opacity />
+    <ButtonComponent color="BLUE" size="small" text="REALIZAR ENTREGA" onPress={handleButton} ghost opacity />
   </View>
 );
 
