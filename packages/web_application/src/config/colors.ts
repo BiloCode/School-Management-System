@@ -8,6 +8,6 @@ enum Colors {
   BLACK_SMOOTH = 'rgba(0,0,0, .6)',
   GRAY = '#878787',
 }
-export type ColorsType = 'BLUE'|'WHITE'|'WHITE_SMOOTH'|'RED'|'GREEN'|'BLACK'|'BLACK_SMOOTH'|'GRAY';
+export type ColorsType = 'blue'|'white'|'white_smooth'|'red'|'green'|'black'|'black_smooth'|'gray';
 
 export default Colors;

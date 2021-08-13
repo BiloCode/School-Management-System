@@ -1,22 +1,19 @@
 import styled from 'styled-components/native';
 
 import Colors, { ColorsType } from '../../../config/colors';
-// import { FontWeightTypes } from '../../../config/FontWeightTypes';
-import { TextSizes, TextTypes } from '../../../config/TextSize';
+import { TextSizes, TextTypes, LINE_HEIGHT } from '../../../config/text_size';
+import Fonts from '../../../config/font';
 
 interface ParagraphPropsType {
-  // weight : FontWeightTypes;
   color : ColorsType;
   size : TextTypes;
+  font : Fonts;
 }
-const weight_values = {
-  ultra_bold: 900,
-  bold: 700,
-  ligth: 200,
-};
 
 export const Paragraph = styled.Text<ParagraphPropsType>`
-  color : ${({ color }) => Colors[color]};
-  font-size : ${({ size }) => TextSizes[size]};
-
+  color : ${({ color }) => Colors[color.toUpperCase()]};
+  font-size : ${({ size }) => `${TextSizes[size.toUpperCase()]}px`};
+  font-family: ${({ font }) => font};
+  width:100%;
+  line-height: ${({ size }) => `${(TextSizes[size.toUpperCase()] * LINE_HEIGHT)}px`};
 `;
