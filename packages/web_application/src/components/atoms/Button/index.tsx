@@ -9,6 +9,7 @@ interface ButtonPropsType extends S.ButtonStylePropsType {
   disabled?: boolean;
 }
 
+<<<<<<< HEAD
 const Button: React.FC<ButtonPropsType> = ({
   text,
   size,
@@ -16,6 +17,10 @@ const Button: React.FC<ButtonPropsType> = ({
   ghost,
   onPress,
   disabled,
+=======
+export const Button : FC<ButtonPropsType> = ({
+  size, color, ghost, text, opacity, onPress,
+>>>>>>> bee6005f2756c0c2602f24eef8af9b123fe7673a
 }) => (
   <S.Content
     size={size}
