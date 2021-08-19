@@ -31,6 +31,12 @@ export const IconContainer = styled.View`
   height: 50%;
 `;
 
+export const Icon = styled.Image`
+  resize-mode: contain;
+  width: 100%;
+  height: 100%;
+`;
+
 export const TextContainer = styled.View`
   align-self: center;
 `;

@@ -28,3 +28,9 @@ export const ArrowPrevContainer = styled.View`
   padding: 0 10px;
   left: 0;
 `;
+
+export const ArrowSize = styled.Image`
+  resize-mode: contain;
+  width: 12px;
+  height: 25px;
+`;

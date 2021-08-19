@@ -22,24 +22,14 @@ const CarruselImages: React.FC<CarruselImagesPropsType> = ({ images }) => {
       <S.ImageCarrusel source={{ uri: images[actualIndex] }} />
       {images.length - 1 !== actualIndex && (
         <S.ArrowNextContainer onTouchEnd={onTouchNext}>
-          <Image
-            style={{
-              resizeMode: 'contain',
-              width: 12,
-              height: 25,
-            }}
+          <S.ArrowSize
             source={require('../../../assets/icons/arrow_right.png')}
           />
         </S.ArrowNextContainer>
       )}
       {actualIndex !== 0 && (
         <S.ArrowPrevContainer onTouchEnd={onTouchPrev}>
-          <Image
-            style={{
-              resizeMode: 'contain',
-              width: 12,
-              height: 25,
-            }}
+          <S.ArrowSize
             source={require('../../../assets/icons/arrow_left.png')}
           />
         </S.ArrowPrevContainer>
