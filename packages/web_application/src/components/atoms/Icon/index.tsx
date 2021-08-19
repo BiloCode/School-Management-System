@@ -1,11 +1,13 @@
 import React, { FC } from 'react';
-import { IconStyle, IconStylePropsType } from './style';
-import { Icons } from '../../../config/icon';
+import { IconStyle } from './style';
+import { Icons } from '../../../styles/icon';
 
-interface IconPropsType extends IconStylePropsType {
+export interface IconPropsType {
   icon : Icons;
 }
 
-export const Icon : FC<IconPropsType> = ({ icon, size }) => (
-  <IconStyle source={icon} size={size} resizeMode="contain" />
+const Icon : FC<IconPropsType> = ({ icon }) => (
+  <IconStyle source={icon} resizeMode="contain" />
 );
+
+export default Icon;

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import PerfilPictureStyle from './style';
-import { Image } from '../../atoms/Image';
+import Image from '../../atoms/Image';
 
 interface PerfilPicturePropsType {
   source : string;

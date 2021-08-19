@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import Colors from '../../../config/colors';
+import { Colors } from '../../../styles/colors';
 
 const size_picture = 180;
 
