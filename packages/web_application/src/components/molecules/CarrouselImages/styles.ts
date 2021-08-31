@@ -1,29 +1,35 @@
 import styled from 'styled-components/native';
+import { TColor } from '../../../styles/text';
+
+interface ImageCarrusel {
+  imageSize: number;
+}
 
 export const ImageContainer = styled.View`
   position: relative;
   width: 100%;
-  height: 100%;
-  border-radius: 5px;
+  height: 130px;
   display: flex;
   flex-direction: row;
   align-items: center;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: ${TColor.BLUE};
 `;
 
 export const ImageCarrusel = styled.Image`
   width: 100%;
   height: 100%;
-  border-radius: 5px;
 `;
 
-export const ArrowNextContainer = styled.View`
+export const ArrowNextContainer = styled.Pressable`
   position: absolute;
-  padding: 0 10px;
+  padding: 20px 10px;
   right: 0;
 `;
 
-export const ArrowPrevContainer = styled.View`
+export const ArrowPrevContainer = styled.Pressable`
   position: absolute;
-  padding: 0 10px;
+  padding: 20px 10px;
   left: 0;
 `;

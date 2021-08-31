@@ -4,26 +4,69 @@ import * as S from './styles';
 import Icon from '../../atoms/Icon';
 import { IconType } from '../../../styles/icons';
 
+import { Animated } from 'react-native';
+
 interface CarruselImagesPropsType {
   images: string[];
 }
 
 const CarruselImages: React.FC<CarruselImagesPropsType> = ({ images }) => {
+  const [actualWidth, setActualWidth] = React.useState<number>(0);
   const [actualIndex, setActualIndex] = React.useState<number>(0);
 
-  const onTouchNext = () => setActualIndex(() => actualIndex + 1);
-  const onTouchPrev = () => setActualIndex(() => actualIndex - 1);
+  const translation = React.useRef(new Animated.Value(0)).current;
+
+  const onTouchNext = () => {
+    Animated.timing(translation, {
+      toValue: actualWidth * -(actualIndex + 1),
+      duration: 500,
+      useNativeDriver: true,
+    }).start();
+    setActualIndex(() => actualIndex + 1);
+  };
+
+  const onTouchPrev = () => {
+    Animated.timing(translation, {
+      toValue: actualWidth * -(actualIndex - 1),
+      duration: 500,
+      useNativeDriver: true,
+    }).start();
+    setActualIndex(() => actualIndex - 1);
+  };
 
   return (
-    <S.ImageContainer>
-      <S.ImageCarrusel source={{ uri: images[actualIndex] }} />
+    <S.ImageContainer
+      onLayout={(event) => {
+        setActualWidth(event.nativeEvent.layout.width);
+      }}
+    >
+      <Animated.View
+        style={[
+          {
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            transform: [
+              {
+                translateX: translation,
+              },
+            ],
+          },
+        ]}
+      >
+        {images.map((v, i) => (
+          <S.ImageCarrusel key={i} source={{ uri: v }} />
+        ))}
+      </Animated.View>
       {images.length - 1 !== actualIndex && (
-        <S.ArrowNextContainer onTouchEnd={onTouchNext}>
+        <S.ArrowNextContainer testID="arrow-right" onTouchEnd={onTouchNext}>
           <Icon icon={IconType.ARROW_RIGHT} />
         </S.ArrowNextContainer>
       )}
       {actualIndex !== 0 && (
-        <S.ArrowPrevContainer onTouchEnd={onTouchPrev}>
+        <S.ArrowPrevContainer testID="arrow-left" onTouchEnd={onTouchPrev}>
           <Icon icon={IconType.ARROW_LEFT} />
         </S.ArrowPrevContainer>
       )}
