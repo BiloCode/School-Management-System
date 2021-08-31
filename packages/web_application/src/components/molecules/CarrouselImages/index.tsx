@@ -5,6 +5,8 @@ import * as S from './styles';
 import Icon from '../../atoms/Icon';
 import { IconType } from '../../../styles/icons';
 
+import { Animated } from 'react-native';
+
 interface CarruselImagesPropsType {
   images: string[];
 }
