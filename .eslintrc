@@ -15,21 +15,20 @@
     "sourceType": "module"
   },
   "extends": ["prettier", "plugin:@typescript-eslint/recommended", "airbnb"],
-  "plugins": [
-    "prettier",
-    "react",
-    "react-hooks",
-    "import",
-    "@typescript-eslint"
-  ],
+  "plugins": ["prettier", "react", "react-hooks", "import", "@typescript-eslint"],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
-    "no-shadow": "off",
-    "react/jsx-filename-extension": [
-      1,
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    "camelcase": "off",
+    "comma-dangle": [
+      "error",
+      {
+        "objects": "never",
+        "arrays": "never"
+      }
     ],
+    "no-shadow": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "indent": ["error", 2],
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/indent": ["error", 2],
@@ -42,12 +41,13 @@
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "no-use-before-define": "off",
     "import/no-extraneous-dependencies": "off",
-    "react/jsx-props-no-spreading": "off",
+    "react/jsx-props-no-spreading": "warn",
     "import/no-unresolved": "off",
     "class-methods-use-this": "off",
     "linebreak-style": "off",
     "no-useless-constructor": "off",
     "no-unused-vars": "off",
+    "react/no-array-index-key": "off",
     "@typescript-eslint/no-unused-vars": [
       "error",
       {
