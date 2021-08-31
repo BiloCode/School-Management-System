@@ -10,7 +10,6 @@ export const Container = styled.View`
 
 export const CarruselContainer = styled.View`
   margin-top: 12px;
-  height: 130px;
 `;
 
 export const ButtonContainer = styled.View`
