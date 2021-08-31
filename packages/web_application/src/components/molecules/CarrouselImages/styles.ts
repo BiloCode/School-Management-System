@@ -1,10 +1,6 @@
 import styled from 'styled-components/native';
 import { TColor } from '../../../styles/text';
 
-interface ImageCarrusel {
-  imageSize: number;
-}
-
 export const ImageContainer = styled.View`
   position: relative;
   width: 100%;

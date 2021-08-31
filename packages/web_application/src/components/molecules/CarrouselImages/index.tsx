@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Animated } from 'react-native';
 import * as S from './styles';
 
 import Icon from '../../atoms/Icon';
