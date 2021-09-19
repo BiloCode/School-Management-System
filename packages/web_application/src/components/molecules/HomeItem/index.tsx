@@ -12,12 +12,7 @@ interface HomeItemPropsType extends S.ContainerProps {
   onPress?(): void;
 }
 
-const HomeItem: React.FC<HomeItemPropsType> = ({
-  icon,
-  text,
-  onPress,
-  color,
-}) => (
+const HomeItem: React.FC<HomeItemPropsType> = ({ icon, text, onPress, color }) => (
   <S.Container>
     <S.HomeItemButtonContainer color={color} onTouchEnd={onPress}>
       <Icon icon={icon} />
