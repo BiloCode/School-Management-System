@@ -1,4 +1,4 @@
-import { UserType } from '@system/types';
+import { UserType } from '@school/types';
 
 export type TokenPayload = {
   user_id: string;

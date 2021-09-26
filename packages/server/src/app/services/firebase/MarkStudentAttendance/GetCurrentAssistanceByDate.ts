@@ -1,4 +1,4 @@
-import { IClassroomCalendar } from '@system/types';
+import { IClassroomCalendar } from '@school/types';
 
 export default class GetCurrentAssistanceByDate {
   private assistanceIndex!: number;

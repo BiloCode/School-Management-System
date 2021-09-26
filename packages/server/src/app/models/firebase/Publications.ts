@@ -3,7 +3,7 @@ import {
   DateRangeType,
   FirebaseFileType,
   PublicationType,
-} from '@system/types';
+} from '@school/types';
 
 @Collection()
 export class Publications {

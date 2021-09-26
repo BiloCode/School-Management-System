@@ -1,5 +1,5 @@
 {
-  "name": "@system/web_application",
+  "name": "@school/web_application",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "workspaces": {
@@ -23,7 +23,7 @@
     "@react-navigation/native": "^5.x",
     "@react-navigation/stack": "^5.x",
     "@reduxjs/toolkit": "^1.6.1",
-    "@system/types": "1.0.0",
+    "@school/types": "1.0.0",
     "expo": "~42.0.1",
     "expo-camera": "~11.2.2",
     "expo-constants": "~11.0.1",

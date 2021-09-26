@@ -1,6 +1,6 @@
 import { Column, Entity, ManyToOne } from 'typeorm';
 
-import { IClassroomStudent } from '@system/types';
+import { IClassroomStudent } from '@school/types';
 import { Student } from './Student';
 
 @Entity()
