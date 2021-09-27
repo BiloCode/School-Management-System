@@ -13,5 +13,9 @@ export const Container = styled.View`
 
 export const DetailCourse = styled.View`
   padding-left: 14px;
-  flex: 1;
+`;
+
+export const IconContainer = styled.View`
+  width: 32px;
+  height: 32px;
 `;

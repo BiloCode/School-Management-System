@@ -6,7 +6,7 @@ export enum TColor {
   BLACK = Colors.BLACK,
   WHITE = Colors.WHITE,
   GREEN = Colors.GREEN,
-  GRAY = Colors.GRAY,
+  GRAY = Colors.GRAY
 }
 
 export enum TSize {
@@ -14,7 +14,7 @@ export enum TSize {
   SMALL = 13,
   NORMAL = 14,
   MEDIUM = 16,
-  BIG = 18,
+  BIG = 18
 }
 
 export const LINE_HEIGHT = 1.4;

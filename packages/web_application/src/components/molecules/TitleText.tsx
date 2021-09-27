@@ -11,17 +11,15 @@ type TProps = {
   text: string;
 };
 
-const TitleText = ({ text, title }: TProps) => {
-  return (
-    <View>
-      <View style={{ marginBottom: 2 }}>
-        <Text weight={Fonts.BLACK} size={TSize.BIG}>
-          {title}
-        </Text>
-      </View>
-      <Text size={TSize.SMALL}>{text}</Text>
+const TitleText = ({ text, title }: TProps) => (
+  <View>
+    <View style={{ marginBottom: 2 }}>
+      <Text weight={Fonts.BLACK} size={TSize.BIG}>
+        {title}
+      </Text>
     </View>
-  );
-};
+    <Text size={TSize.SMALL}>{text}</Text>
+  </View>
+);
 
 export default TitleText;

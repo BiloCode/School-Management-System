@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as S from './styles';
 
-import Icon from '../../atoms/Icon';
+import Icon from '../../atoms/Icon/Icon';
 import Input from '../../atoms/Input';
 
 import { IconType } from '../../../styles/icons';

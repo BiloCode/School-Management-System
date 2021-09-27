@@ -1,14 +1,14 @@
 import * as React from 'react';
-import * as S from './styles';
 import { Pressable } from 'react-native';
+import { DrawerActions, useNavigation } from '@react-navigation/native';
+import * as S from './styles';
 
 import Text from '../../atoms/Text';
 
 import { Fonts } from '../../../styles/font';
 import { TColor, TSize } from '../../../styles/text';
-import { DrawerActions, useNavigation } from '@react-navigation/native';
 
-import Icon from '../../atoms/Icon';
+import Icon from '../../atoms/Icon/Icon';
 import { IconType } from '../../../styles/icons';
 
 type TProps = {
