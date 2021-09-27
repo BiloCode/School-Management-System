@@ -1,6 +1,6 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
-import { ITutor } from '@system/types';
+import { ITutor } from '@school/types';
 import { StudentTutors } from './StudentTutors';
 
 @Entity()

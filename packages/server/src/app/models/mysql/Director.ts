@@ -5,7 +5,7 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { IDirector } from '@system/types';
+import { IDirector } from '@school/types';
 
 import { User } from './User';
 

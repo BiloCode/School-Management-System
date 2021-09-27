@@ -3,7 +3,7 @@ import { Entity, ManyToOne, Column } from 'typeorm';
 import { Student } from './Student';
 import { Tutor } from './Tutor';
 
-import { IStudentTutors, RelationshipType } from '@system/types';
+import { IStudentTutors, RelationshipType } from '@school/types';
 
 @Entity()
 export class StudentTutors implements IStudentTutors {

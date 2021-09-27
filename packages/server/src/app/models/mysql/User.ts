@@ -1,5 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { FirebaseImage, IUser } from '@system/types';
+import { FirebaseImage, IUser } from '@school/types';
 
 @Entity()
 export class User implements IUser {

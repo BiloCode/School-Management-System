@@ -1,7 +1,7 @@
 import { GetDirector } from '@services/mysql/GetDirector';
 import { GetTeacher } from '@services/mysql/GetTeacher';
 import { GetStudent } from '@services/mysql/GetStudent';
-import { UserType } from '@system/types';
+import { UserType } from '@school/types';
 
 export const GetUserByType = {
   [UserType.DIRECTOR]: new GetDirector(),

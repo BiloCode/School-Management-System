@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import AuthenticationUser from '@services/mysql/AuthenticationUser';
 import ComparePasswordWithBcrypt from '@services/ComparePassword';
 import CreateToken from '@services/CreateToken';
-import { UserType } from '@system/types';
+import { UserType } from '@school/types';
 
 type RequestControllerType = {
   dni: string;

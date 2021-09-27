@@ -1,6 +1,6 @@
 import { firestore } from 'firebase-admin';
 import { Collection } from 'fireorm';
-import { DateRangeType, IClassroomCalendar } from '@system/types';
+import { DateRangeType, IClassroomCalendar } from '@school/types';
 
 @Collection()
 export class ClassroomCalendar implements IClassroomCalendar {

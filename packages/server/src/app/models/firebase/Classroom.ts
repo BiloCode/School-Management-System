@@ -1,6 +1,6 @@
 import { Collection } from 'fireorm';
 import { firestore } from 'firebase-admin';
-import { SchoolGradeType, IClassroom } from '@system/types';
+import { SchoolGradeType, IClassroom } from '@school/types';
 
 @Collection()
 export class Classroom implements IClassroom {

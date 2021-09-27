@@ -1,6 +1,6 @@
 import { firestore } from 'firebase-admin';
 
-import { ISystemStorage, FileType } from '@system/types';
+import { ISystemStorage, FileType } from '@school/types';
 
 export class SystemStorage implements ISystemStorage {
   id: string;

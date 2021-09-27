@@ -1,5 +1,5 @@
 import { Collection } from 'fireorm';
-import { FilePermissionType, IFileSection } from '@system/types';
+import { FilePermissionType, IFileSection } from '@school/types';
 
 //Figma Refactor
 

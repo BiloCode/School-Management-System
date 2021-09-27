@@ -1,5 +1,5 @@
 {
-  "name": "@system/server",
+  "name": "@school/server",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -35,7 +35,7 @@
     "typescript": "^4.3.4"
   },
   "dependencies": {
-    "@system/types": "^1.0.0",
+    "@school/types": "^1.0.0",
     "bcrypt": "^5.0.1",
     "chalk": "^2.4.2",
     "class-validator": "^0.13.1",

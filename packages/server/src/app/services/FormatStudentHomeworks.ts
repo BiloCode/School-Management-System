@@ -1,4 +1,4 @@
-import { PublicationsFormated } from '@system/types';
+import { PublicationsFormated } from '@school/types';
 import {
   FormatStudentHomeworksPayload,
   IFormatStudentHomeworks,

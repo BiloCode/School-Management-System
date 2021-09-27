@@ -1,7 +1,7 @@
 import { GetUserByType } from '@services/mysql/GetUserByType';
 import { Controller } from '@localtypes/Controller';
 import { Request, Response } from 'express';
-import { UserType } from '@system/types';
+import { UserType } from '@school/types';
 
 type RequestControllerType = {
   user_id: string;

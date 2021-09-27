@@ -7,7 +7,7 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-import { IStudent, PersonStateType } from '@system/types';
+import { IStudent, PersonStateType } from '@school/types';
 
 import { User } from './User';
 import { Homework } from './Homework';

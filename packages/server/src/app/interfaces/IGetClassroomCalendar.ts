@@ -1,4 +1,4 @@
-import { IClassroom, IClassroomCalendar } from '@system/types';
+import { IClassroom, IClassroomCalendar } from '@school/types';
 
 export interface IGetClassroomPayload extends Partial<IClassroom> {}
 

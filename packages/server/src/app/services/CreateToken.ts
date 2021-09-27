@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { TOKEN_KEY } from '@config/environments';
-import { UserType } from '@system/types';
+import { UserType } from '@school/types';
 
 class CreateToken {
   create(user_id:string, user_type:UserType) {

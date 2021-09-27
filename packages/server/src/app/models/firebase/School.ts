@@ -1,5 +1,5 @@
 import { Collection } from 'fireorm';
-import { FirebaseImage, ISchool, DateRangeType } from '@system/types';
+import { FirebaseImage, ISchool, DateRangeType } from '@school/types';
 
 @Collection()
 export class School implements ISchool {

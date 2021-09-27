@@ -10,7 +10,7 @@ import {
 import { firestore } from 'firebase-admin';
 
 import { Student } from './Student';
-import { FirebaseFileType, IHomework } from '@system/types';
+import { FirebaseFileType, IHomework } from '@school/types';
 
 @Entity()
 export class Homework implements IHomework {
