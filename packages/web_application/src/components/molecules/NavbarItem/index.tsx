@@ -6,10 +6,11 @@ import Text from '../../atoms/Text';
 
 import { TSize } from '../../../styles/text';
 import { Fonts } from '../../../styles/font';
+import { IconType } from '../../../styles/icons';
 
 interface DrawerItemPropsType extends S.DrawerItemStyleProps {
   text: string;
-  iconSource: any;
+  iconSource: IconType;
   onPress(): void;
 }
 

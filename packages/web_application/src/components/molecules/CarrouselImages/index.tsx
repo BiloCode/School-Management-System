@@ -1,11 +1,9 @@
 import * as React from 'react';
-import { Animated } from 'react-native';
+import { Animated, Animated } from 'react-native';
 import * as S from './styles';
 
-import Icon from '../../atoms/Icon';
+import Icon from '../../atoms/Icon/Icon';
 import { IconType } from '../../../styles/icons';
-
-import { Animated } from 'react-native';
 
 interface CarruselImagesPropsType {
   images: string[];
@@ -21,7 +19,7 @@ const CarruselImages: React.FC<CarruselImagesPropsType> = ({ images }) => {
     Animated.timing(translation, {
       toValue: actualWidth * -(actualIndex + 1),
       duration: 500,
-      useNativeDriver: true,
+      useNativeDriver: true
     }).start();
     setActualIndex(() => actualIndex + 1);
   };
@@ -30,7 +28,7 @@ const CarruselImages: React.FC<CarruselImagesPropsType> = ({ images }) => {
     Animated.timing(translation, {
       toValue: actualWidth * -(actualIndex - 1),
       duration: 500,
-      useNativeDriver: true,
+      useNativeDriver: true
     }).start();
     setActualIndex(() => actualIndex - 1);
   };
@@ -51,10 +49,10 @@ const CarruselImages: React.FC<CarruselImagesPropsType> = ({ images }) => {
             alignItems: 'center',
             transform: [
               {
-                translateX: translation,
-              },
-            ],
-          },
+                translateX: translation
+              }
+            ]
+          }
         ]}
       >
         {images.map((v, i) => (

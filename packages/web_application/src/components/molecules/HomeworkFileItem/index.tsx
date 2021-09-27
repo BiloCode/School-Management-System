@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { ImageSourcePropType, View } from 'react-native';
+import { ImageSourcePropType, View, Image } from 'react-native';
 import * as S from './styles';
 import Text from '../../atoms/Text';
 import { TColor, TSize } from '../../../styles/text';
-import { Image } from 'react-native';
-import Icon from '../../atoms/Icon';
+
+import Icon from '../../atoms/Icon/Icon';
 import { IconType } from '../../../styles/icons';
 
 type TProps = {
@@ -35,12 +35,12 @@ const HomeworkFileItem = ({ course, file }: TProps) => {
 };
 
 HomeworkFileItem.defaultProps = {
-  preview: false,
+  preview: false
 };
 
 const resourceImages: Record<string, ImageSourcePropType> = {
   pdf: require('../../../assets/icons/file-pdf.png'),
-  jpg: require('../../../assets/icons/file-image.png'),
+  jpg: require('../../../assets/icons/file-image.png')
 };
 
 function getFileExtension(path: string) {
