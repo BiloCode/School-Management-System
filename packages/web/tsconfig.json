@@ -14,7 +14,22 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "paths": {
+      "@localtypes/*": ["core/types/*"],
+      "@services/*": ["core/services/*"],
+      "@utils/*": ["core/utils/*"],
+      "@pages/*": ["components/pages/*"],
+      "@molecules/*": ["components/molecules/*"],
+      "@atoms/*": ["components/atoms/*"],
+      "@organisms/*": ["components/organisms/*"],
+      "@templates/*": ["components/templates/*"],
+      "@hooks/*": ["hooks/*"],
+      "@store": ["store/index.ts"],
+      "@store/*": ["store/*"],
+      "@router": ["router/index.tsx"],
+    }
   },
   "include": ["./src"]
 }
