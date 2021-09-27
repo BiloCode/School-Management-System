@@ -1,5 +1,5 @@
 {
-  "name": "system",
+  "name": "school",
   "version": "1.0.0",
   "private": true,
   "workspaces": {
@@ -26,14 +26,16 @@
     "prettier": "^2.3.2"
   },
   "scripts": {
-    "dev:app" : "lerna exec --scope @school/web_application -- yarn start",
-    "test:app" : "lerna exec --scope @school/web_application -- yarn jest",
+    "lint": "eslint packages/**",
+    "postinstall": "husky install",
+    "lint:fix": "eslint packages/** --fix",
+    "dev:app" : "lerna exec --scope @school/application -- yarn start",
+    "test:app" : "lerna exec --scope @school/application -- yarn jest",
+    "dev:web" : "lerna exec --scope @school/web -- yarn dev",
+    "test:web" : "lerna exec --scope @school/web -- yarn jest",
     "dev:server": "lerna exec --scope @school/server -- yarn dev",
     "test:server": "lerna exec --scope @school/server -- yarn test:watch",
-    "build:server": "lerna exec --scope @school/server -- yarn build",
-    "postinstall": "husky install",
-    "lint": "eslint packages/**",
-    "lint:fix": "eslint packages/** --fix"
+    "build:server": "lerna exec --scope @school/server -- yarn build"
   },
   "dependencies": {
     "@commitlint/cli": "^12.1.4",
