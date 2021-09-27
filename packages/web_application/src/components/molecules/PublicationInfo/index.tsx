@@ -1,36 +1,30 @@
 import * as React from 'react';
 import * as S from './styles';
 
-import { FC } from 'react';
 import Text from '../../atoms/Text';
-import { View } from 'react-native';
-import { Fonts } from '../../../styles/font';
-import { TColor, TSize } from '../../../styles/text';
 
-interface PublicationInfoPropsType extends S.PublicationInfoStylePropsType {
+import { TColor } from '../../../styles/text';
+
+interface Props {
   title: string;
   date: string;
   description: string;
+  titleColor?: keyof typeof TColor;
 }
 
-const PublicationInfo: FC<PublicationInfoPropsType> = ({
-  title,
-  date,
-  description,
-  titleColor,
-}) => (
+const PublicationInfo: React.FC<Props> = ({ title, date, description, titleColor }) => (
   <S.Container>
     <S.HeaderContainer>
       <S.TitleContainer>
-        <Text weight={Fonts.BOLD} size={TSize.NORMAL} color={titleColor}>
+        <Text weight="BOLD" size="NORMAL" color={titleColor}>
           {title}
         </Text>
       </S.TitleContainer>
-      <Text weight={Fonts.REGULAR} size={TSize.VERY_SMALL} color={TColor.GRAY}>
+      <Text weight="REGULAR" size="VERY_SMALL" color="GRAY">
         {date}
       </Text>
     </S.HeaderContainer>
-    <Text weight={Fonts.REGULAR} size={TSize.VERY_SMALL}>
+    <Text weight="REGULAR" size="VERY_SMALL">
       {description}
     </Text>
   </S.Container>

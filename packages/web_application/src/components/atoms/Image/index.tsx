@@ -7,10 +7,7 @@ interface ImagePropsType {
 }
 
 const Image = ({ source, resizeContain }: ImagePropsType) => (
-  <ImageStyle
-    source={{ uri: source }}
-    resizeMode={resizeContain ? 'contain' : 'cover'}
-  />
+  <ImageStyle source={{ uri: source }} resizeMode={resizeContain ? 'contain' : 'cover'} />
 );
 
 export default Image;

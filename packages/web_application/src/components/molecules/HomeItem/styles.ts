@@ -6,7 +6,11 @@ export interface ContainerProps {
   color: HomeItemColor;
 }
 
-export const Container = styled.View``;
+export const Container = styled.View`
+  max-width: 100%;
+  min-width: 142px;
+  margin-bottom: 15px;
+`;
 
 export const HomeItemButtonContainer = styled.View<ContainerProps>`
   width: 100%;

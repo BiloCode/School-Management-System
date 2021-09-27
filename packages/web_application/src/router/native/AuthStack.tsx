@@ -19,7 +19,7 @@ const Drawer = createDrawerNavigator();
 
 const RouterApplication = () => (
   <Drawer.Navigator
-    initialRouteName="Homework-Send"
+    initialRouteName="Home"
     drawerContent={DrawerMenu}
     sceneContainerStyle={{ backgroundColor: '#fff' }}
   >

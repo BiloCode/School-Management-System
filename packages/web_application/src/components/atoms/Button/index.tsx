@@ -1,22 +1,13 @@
 import * as React from 'react';
 import * as S from './styles';
 
-import { BColor, BSize } from '../../../styles/button';
-
-interface ButtonPropsType extends S.ButtonStylePropsType {
+interface Props extends S.ButtonStylePropsType {
   text: string;
   onPress?(): void;
   disabled?: boolean;
 }
 
-const Button: React.FC<ButtonPropsType> = ({
-  text,
-  size,
-  color,
-  ghost,
-  onPress,
-  disabled,
-}) => (
+const Button: React.FC<Props> = ({ text, size, color, ghost, onPress, disabled }) => (
   <S.Content
     size={size}
     color={color}
@@ -29,10 +20,5 @@ const Button: React.FC<ButtonPropsType> = ({
     </S.Text>
   </S.Content>
 );
-
-Button.defaultProps = {
-  color: BColor.BLUE,
-  size: BSize.NORMAL,
-};
 
 export default Button;

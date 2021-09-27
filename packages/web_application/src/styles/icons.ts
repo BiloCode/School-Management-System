@@ -10,5 +10,7 @@ export enum IconType {
   NEWS = require('../assets/icons/news.png'),
   SEARCH = require('../assets/icons/search.png'),
   HOMEWORK_OK = require('../assets/icons/homework-book.png'),
-  HOMEWORK_LATED = require('../assets/icons/homework-lated.png')
+  HOMEWORK_LATED = require('../assets/icons/homework-lated.png'),
+  ASSITANCE = require('../assets/icons/assistance.png'),
+  VIEW_HOMEWORKS = require('../assets/icons/view-homeworks.png')
 }

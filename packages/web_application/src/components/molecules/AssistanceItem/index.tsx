@@ -18,13 +18,13 @@ const AssistanceItem = ({ day, month, description }: TProps) => (
     {({ pressed }) => (
       <S.Container pressed={pressed}>
         <S.Circle>
-          <Text weight={Fonts.BLACK} size={TSize.MEDIUM} color={TColor.WHITE}>
+          <Text weight="BLACK" size={TSize.MEDIUM} color={TColor.WHITE}>
             {day}
           </Text>
         </S.Circle>
         <S.TextContainer>
-          <Text weight={Fonts.BOLD}>Mes de {month}</Text>
-          <Text size={TSize.VERY_SMALL}>
+          <Text weight="BOLD">Mes de {month}</Text>
+          <Text size="VERY_SMALL">
             {description ? description : 'Inasistencia injustificada'}
           </Text>
         </S.TextContainer>

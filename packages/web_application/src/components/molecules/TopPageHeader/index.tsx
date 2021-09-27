@@ -5,8 +5,6 @@ import * as S from './styles';
 import Text from '../../atoms/Text';
 import BackIconHoverable from '../BackIconHoverable';
 
-import { Fonts } from '../../../styles/font';
-
 type Props = {
   title?: string;
 };
@@ -21,7 +19,7 @@ const TopPageHeader: React.FC<Props> = ({ title }) => {
       <S.Icon>
         <BackIconHoverable onPress={goToBack} />
       </S.Icon>
-      {title !== '' && <Text weight={Fonts.BOLD}>{title}</Text>}
+      {title !== '' && <Text weight="BOLD">{title}</Text>}
     </S.MainContainer>
   );
 };

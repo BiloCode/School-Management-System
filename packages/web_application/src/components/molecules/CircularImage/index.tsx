@@ -16,7 +16,7 @@ const CircularImage = ({ source, size }: TProps) => (
 );
 
 CircularImage.defaultProps = {
-  size: CircularImageSize.DEFAULT,
+  size: CircularImageSize.DEFAULT
 };
 
 export default CircularImage;

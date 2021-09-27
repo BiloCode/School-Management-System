@@ -3,9 +3,6 @@ import { Animated } from 'react-native';
 import * as S from './styles';
 
 import Icon from '../../atoms/Icon';
-import { IconType } from '../../../styles/icons';
-
-import { Animated } from 'react-native';
 
 interface CarruselImagesPropsType {
   images: string[];
@@ -21,7 +18,7 @@ const CarruselImages: React.FC<CarruselImagesPropsType> = ({ images }) => {
     Animated.timing(translation, {
       toValue: actualWidth * -(actualIndex + 1),
       duration: 500,
-      useNativeDriver: true,
+      useNativeDriver: true
     }).start();
     setActualIndex(() => actualIndex + 1);
   };
@@ -30,7 +27,7 @@ const CarruselImages: React.FC<CarruselImagesPropsType> = ({ images }) => {
     Animated.timing(translation, {
       toValue: actualWidth * -(actualIndex - 1),
       duration: 500,
-      useNativeDriver: true,
+      useNativeDriver: true
     }).start();
     setActualIndex(() => actualIndex - 1);
   };
@@ -51,10 +48,10 @@ const CarruselImages: React.FC<CarruselImagesPropsType> = ({ images }) => {
             alignItems: 'center',
             transform: [
               {
-                translateX: translation,
-              },
-            ],
-          },
+                translateX: translation
+              }
+            ]
+          }
         ]}
       >
         {images.map((v, i) => (
@@ -63,12 +60,12 @@ const CarruselImages: React.FC<CarruselImagesPropsType> = ({ images }) => {
       </Animated.View>
       {images.length - 1 !== actualIndex && (
         <S.ArrowNextContainer testID="arrow-right" onTouchEnd={onTouchNext}>
-          <Icon icon={IconType.ARROW_RIGHT} />
+          <Icon icon="ARROW_RIGHT" />
         </S.ArrowNextContainer>
       )}
       {actualIndex !== 0 && (
         <S.ArrowPrevContainer testID="arrow-left" onTouchEnd={onTouchPrev}>
-          <Icon icon={IconType.ARROW_LEFT} />
+          <Icon icon="ARROW_LEFT" />
         </S.ArrowPrevContainer>
       )}
     </S.ImageContainer>

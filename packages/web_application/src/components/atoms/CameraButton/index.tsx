@@ -1,13 +1,12 @@
 import * as React from 'react';
+import { Image } from 'react-native';
 import * as S from './styles';
 
-import { Image } from 'react-native';
-
-const CameraIcon = require('../../../assets/icons/camera.png');
+import { IconType } from '../../../styles/icons';
 
 const CameraButton = () => (
   <S.Button>
-    <Image source={CameraIcon} />
+    <Image source={IconType.CAMERA} />
   </S.Button>
 );
 

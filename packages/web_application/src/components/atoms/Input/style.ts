@@ -8,7 +8,7 @@ const InputStyle = styled.TextInput`
   height: 100%;
   padding: 0 16px 0 0;
   color: ${Colors.BLACK};
-  font-family: ${Fonts.REGULAR};
+  font-family: $ 'REGULAR';
   background-color: ${Colors.WHITE_LIGHT};
 `;
 

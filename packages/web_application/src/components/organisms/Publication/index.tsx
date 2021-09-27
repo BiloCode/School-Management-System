@@ -1,15 +1,13 @@
 import * as React from 'react';
 import * as S from './styles';
 
-import PublicationInfo from '../../molecules/PublicationInfo';
-import { TColor } from '../../../styles/text';
 import Button from '../../atoms/Button';
-import { BColor, BSize } from '../../../styles/button';
+import PublicationInfo from '../../molecules/PublicationInfo';
 import CarrouselImages from '../../molecules/CarrouselImages';
 
 type PublicationType = 'homework' | 'announcement';
 
-interface PublicationPropsType {
+interface Props {
   type: PublicationType;
   title: string;
   date: string;
@@ -17,41 +15,35 @@ interface PublicationPropsType {
   onPress?(): void;
   images?: string[];
 }
-const Publication: React.FC<PublicationPropsType> = ({
+
+const Publication: React.FC<Props> = ({
   type,
   title,
   date,
   description,
   onPress,
-  images,
-}) => {
-  return (
-    <S.Container>
-      <PublicationInfo
-        titleColor={type === 'homework' ? TColor.BLUE : TColor.RED}
-        title={title}
-        date={date}
-        description={description}
-      />
+  images
+}) => (
+  <S.Container>
+    <PublicationInfo
+      date={date}
+      title={title}
+      description={description}
+      titleColor={type === 'homework' ? 'BLUE' : 'RED'}
+    />
 
-      {images && (
-        <S.CarruselContainer>
-          <CarrouselImages images={images} />
-        </S.CarruselContainer>
-      )}
+    {images && (
+      <S.CarruselContainer>
+        <CarrouselImages images={images} />
+      </S.CarruselContainer>
+    )}
 
-      {type === 'homework' && (
-        <S.ButtonContainer>
-          <Button
-            text="Ver detalles"
-            color={BColor.BLUE}
-            size={BSize.SMALL}
-            onPress={onPress}
-          />
-        </S.ButtonContainer>
-      )}
-    </S.Container>
-  );
-};
+    {type === 'homework' && (
+      <S.ButtonContainer>
+        <Button text="Ver detalles" color="BLUE" size="SMALL" onPress={onPress} />
+      </S.ButtonContainer>
+    )}
+  </S.Container>
+);
 
 export default Publication;
