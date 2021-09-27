@@ -26,6 +26,7 @@
       "@organisms/*": ["components/organisms/*"],
       "@templates/*": ["components/templates/*"],
       "@hooks/*": ["hooks/*"],
+      "@configuration/*": ["configuration/*"],
       "@store": ["store/index.ts"],
       "@store/*": ["store/*"],
       "@router": ["router/index.tsx"],
