@@ -1,11 +1,11 @@
-import { Button } from '@chakra-ui/button';
 import { Heading } from '@chakra-ui/react';
 
+import ApplicationLayout from '@templates/ApplicationLayout';
+
 const Home = () => (
-  <div>
-    <Heading fontSize="3xl">Chakra UI</Heading>
-    <Button colorScheme="blue">Button</Button>
-  </div>
+  <ApplicationLayout>
+    <Heading size="lg">Inicio</Heading>
+  </ApplicationLayout>
 );
 
 export default Home;
